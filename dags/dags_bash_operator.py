@@ -5,7 +5,7 @@ from airflow.operators.bash import BashOperator
 
 with DAG(
     dag_id="dags_bash_operator",
-    schedule="0 0 * * *", # 순서대로 분, 시, 일, 월, 요일 - 매일 0시 0분에 스케줄
+    schedule="0 0 * * *", # cron schedule: 순서대로 분, 시, 일, 월, 요일 - 매일 0시 0분에 스케줄
     start_date=pendulum.datetime(2024, 1, 1, tz="Asia/Seoul"), 
     catchup=False, # 현재 날짜 - start_date 간의 누락된 시점의 구간을 돌릴 것인지
     # dagrun_timeout=datetime.timedelta(minutes=60), # timeout(실패지점) 기준 설정
