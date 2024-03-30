@@ -12,7 +12,9 @@ with DAG(
     tb_corona19_count_status = SeoulApiToCsvOperator(
         task_id='tb_corona19_count_status',
         dataset_nm='TbCorona19CountStatus',
-        path='/opt/airflow/files/TbCorona19CountStatus/{{data_interval_end.in_timezone("Asia/Seoul") | ds_nodash }}',
+        # 2023-05-31 이후 적재 중단된 데이터. 날짜 고정값으로 박아두고 실습용으로만 사용
+        # {{data_interval_end.in_timezone("Asia/Seoul") | ds_nodash }}
+        path='/opt/airflow/files/TbCorona19CountStatus/20230101',
         file_name='TbCorona19CountStatus.csv'
     )
     
@@ -20,7 +22,9 @@ with DAG(
     tv_corona19_vaccine_stat_new = SeoulApiToCsvOperator(
         task_id='tv_corona19_vaccine_stat_new',
         dataset_nm='tvCorona19VaccinestatNew',
-        path='/opt/airflow/files/tvCorona19VaccinestatNew/{{data_interval_end.in_timezone("Asia/Seoul") | ds_nodash }}',
+        # 2023-05-31 이후 적재 중단된 데이터. 날짜 고정값으로 박아두고 실습용으로만 사용
+        # {{data_interval_end.in_timezone("Asia/Seoul") | ds_nodash }}
+        path='/opt/airflow/files/tvCorona19VaccinestatNew/20230101',
         file_name='tvCorona19VaccinestatNew.csv'
     )
 
