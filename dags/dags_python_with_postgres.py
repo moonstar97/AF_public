@@ -1,3 +1,5 @@
+# 이러한 dag 작성 방식은 접속하는 개인 정보를 코드 상에서 노출하고 정보 변경시 대응이 어렵다는 문제가 있음
+# 해결방안으로 1.variable 이용 or 2.hook 이용
 from airflow import DAG
 import pendulum
 from airflow.operators.python import PythonOperator
