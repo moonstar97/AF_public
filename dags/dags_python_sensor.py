@@ -5,7 +5,7 @@ from airflow.hooks.base import BaseHook
 
 with DAG(
     dag_id='dags_python_sensor',
-    start_date=pendulum.datetime(2024, 4, 1, tz='Asia/Seoul'),
+    start_date=pendulum.datetime(2023, 4, 1, tz='Asia/Seoul'),
     schedule='10 1 * * *',
     catchup=False
 ) as dag:
